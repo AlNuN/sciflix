@@ -58,6 +58,7 @@ a{
 :root{
   --primary: #9FDEF7;
   --background: #2B303A;
+  --grayDark:#141414;
   --black: var(--background);
   --blackLighter: #9E9E9E;
   --grayLight: #F5F5F5;
