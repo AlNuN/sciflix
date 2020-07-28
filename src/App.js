@@ -8,7 +8,14 @@ import dadosIniciais from './data/dados_iniciais.json'
 
 const AppWrapper = styled.div`
   background: var(--grayDark);
-`
+
+  padding-top: var(--bodyPaddingTopPc);
+
+  @media(max-width: 800px){
+    padding-top: var(--bodyPaddingTopCel);
+  }
+
+`;
 
 function App() {
   return (

@@ -66,4 +66,6 @@ a{
   --white: #FFFFFF;
   --frontEnd: #6BD1FF;
   --backEnd: #00C86F;
+  --bodyPaddingTopPc: 94px;
+  --bodyPaddingTopCel: 40px;
 }
