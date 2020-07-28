@@ -66,6 +66,12 @@ a{
   --white: #FFFFFF;
   --frontEnd: #6BD1FF;
   --backEnd: #00C86F;
-  --bodyPaddingTopPc: 94px;
-  --bodyPaddingTopCel: 40px;
+  --bodyMarginTopPc: 94px;
+  --bodyMarginTopCel: 40px;
+}
+
+#root{
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
 }
