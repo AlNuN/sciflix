@@ -1,36 +1,96 @@
-import React from 'react';
+import React, { useState } from 'react';
 import TemplatePage from '../../../components/TemplatePage';
 import { Link } from 'react-router-dom';
-import CategoriaWrapper from '../style';
+import CategoryWrapper from '../style';
+import FormField from '../../../components/FormField';
 
-function CadastroCategoria(){
+function CategoryRegistration(){
+  const defaultValues = {
+    name: '',
+    description: '',
+    color: '#141414',
+  }
+
+  const [categories, setCategories] = useState([]);
+  const [values, setValues] = useState(defaultValues);
+
+  function setValue(key, value){
+    setValues({
+      ...values,
+      [key]: value,
+    });
+  }
+
+  function handleChange (eventInfo) {
+    setValue(
+    eventInfo.target.getAttribute('name'),
+    eventInfo.target.value
+    );
+  }
+
   return(
     <TemplatePage>
-      <CategoriaWrapper>
-        <h1>Cadastro de Categoria</h1>
+      <CategoryWrapper>
+        <h1>Cadastro de Categoria: {values.name}</h1>
 
-        <form>
+        <form
+        style={{background: values.color}}
+        onSubmit={function (i) {
+          i.preventDefault();
+          setCategories([...categories, values]);
 
-          <label>
-            Nome da Categoria:
-            <input
-              type="text"
-            />
-          </label>
+          setValues(defaultValues);
+        }}
+        >
+
+        <FormField 
+          label="Nome da Categoria"
+          value={values.name}
+          onChange={handleChange}
+          type="text"
+          name="name"
+        />
+
+        <FormField 
+          label="Descrição"
+          value={values.description}
+          onChange={handleChange}
+          type="textarea"
+          name="description"
+        />
+
+        <FormField 
+          label="Cor"
+          value={values.color}
+          onChange={handleChange}
+          type="color"
+          name="color"
+        />
 
           <button>
             Cadastrar
           </button>
+
         </form>
+
+        <ul>
+          {categories.map( (categoria, indice) => {
+            return (
+              <li key={` ${categoria}${indice}`}>
+                {categoria.name}
+              </li>
+            )
+          })}
+        </ul>
 
 
         <Link to="/">
           Ir para home
         </Link>
 
-      </CategoriaWrapper>
+      </CategoryWrapper>
     </TemplatePage>
   )
 }
 
-export default CadastroCategoria;
+export default CategoryRegistration;
