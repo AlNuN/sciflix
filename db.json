@@ -1,0 +1,16 @@
+{
+    "categorias": [
+        {
+            "id": 1,
+            "name": "Front end",
+            "description": "uma categoria legal",
+            "color": "#cbd1ff"
+        },
+        {
+            "id": 2,
+            "name": "Back end",
+            "description": "outra categoria legal",
+            "color": "#111"
+        }
+    ]
+}
