@@ -4,40 +4,23 @@ import TemplatePage from '../../../components/TemplatePage';
 import CategoryWrapper from '../style';
 import FormField from '../../../components/FormField';
 import Button from '../../../components/Button';
+import useForm from '../../../hooks/useForm';
+import resources from '../../../repositories/categories';
 
 function CategoryRegistration() {
   const defaultValues = {
     name: '',
     description: '',
-    color: '#141414',
+    color: '',
   };
 
+  const { handleChange, values, clearForm } = useForm(defaultValues);
+
   const [categories, setCategories] = useState([]);
-  const [values, setValues] = useState(defaultValues);
-
-  function setValue(key, value) {
-    setValues({
-      ...values,
-      [key]: value,
-    });
-  }
-
-  function handleChange(eventInfo) {
-    setValue(
-      eventInfo.target.getAttribute('name'),
-      eventInfo.target.value,
-    );
-  }
 
   useEffect(() => {
-    const URL = window.location.hostname.includes('localhost')
-      ? 'http://localhost:8080/categorias'
-      : 'https://sciflix.herokuapp.com/categorias';
-    fetch(URL)
-      .then(async (response) => {
-        const json = await response.json();
-        setCategories([...json]);
-      });
+    resources.getAll()
+      .then((json) => setCategories([...json]));
   }, []);
 
   return (
@@ -54,12 +37,12 @@ function CategoryRegistration() {
             i.preventDefault();
             setCategories([...categories, values]);
 
-            setValues(defaultValues);
+            clearForm();
           }}
         >
 
           <FormField
-            label="Nome da Categoria"
+            label="Título da Categoria"
             value={values.name}
             onChange={handleChange}
             type="text"
@@ -96,8 +79,8 @@ function CategoryRegistration() {
 
         <ul>
           {categories.map((category) => (
-            <li key={`${category.name}`}>
-              {category.name}
+            <li key={`${category.title}`}>
+              {category.title}
             </li>
           ))}
         </ul>

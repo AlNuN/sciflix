@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 
 const Button = styled.button`
-  color: ${props => props.primary ? "var(--white)" : "var(--black)"};
+  color: ${(props) => (props.primary === 'true' ? 'var(--white)' : 'var(--black)')};
   border: 1px solid var(--white);
   box-sizing: border-box;
   cursor: pointer;
@@ -18,7 +18,7 @@ const Button = styled.button`
   &:focus {
     opacity: .5;
   }
-  ${props => props.noMedia ? "" : `
+  ${(props) => (props.noMedia ? '' : `
   @media (max-width: 800px) {
     position: fixed;
     left: 0;
@@ -29,7 +29,7 @@ const Button = styled.button`
     border: 0;
     text-align: center;
   }
-  `
+  `)
 }
 `;
 

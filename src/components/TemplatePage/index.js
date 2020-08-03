@@ -1,5 +1,5 @@
 import React from 'react';
-import styled from 'styled-components'
+import styled from 'styled-components';
 import Menu from '../Menu';
 import Footer from '../Footer';
 
@@ -13,16 +13,16 @@ const Main = styled.main`
   @media(max-width: 800px){
     margin-top: var(--bodyMarginTopCel);
   }
-`
+`;
 
 function TemplatePage({ children }) {
   return (
     <>
-    <Menu />
+      <Menu />
       <Main>
-      {children}
+        {children}
       </Main>
-    <Footer />
+      <Footer />
     </>
   );
 }
