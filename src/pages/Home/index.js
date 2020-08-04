@@ -29,9 +29,10 @@ function Home() {
               <BannerMain
                 videoTitle={initialData[0].videos[0].title}
                 url={initialData[0].videos[0].url}
-                videoDescription="O que é Front-end? Trabalhando na área da os termos HTML, CSS e Javascript..."
+                videoDescription="Entendendo como o buraco negro distorce o espaço e o tempo!"
               />
               <Carousel
+                key={`Carousel_${category.id}`}
                 ignoreFirstVideo
                 category={initialData[0]}
               />
@@ -41,7 +42,7 @@ function Home() {
 
         return (
           <Carousel
-            key={category.id}
+            key={`Carousel_${category.id}`}
             category={category}
           />
         );

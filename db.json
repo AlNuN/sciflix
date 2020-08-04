@@ -2,134 +2,180 @@
   "categories": [
     {
       "id": 1,
-      "title": "Front end",
-      "color": "#6BD1FF",
-      "extra_link": {
-        "text": "Formação de Front End na Alura",
-        "url": "https://www.alura.com.br/cursos-online-front-end"
-      }
+      "title": "YouTube",
+      "color": "#6BD1FF"
     },
     {
       "id": 2,
-      "title": "Back end",
-      "color": "#00C86F",
-      "extra_link": {
-        "text": "Cursos de Back End na Alura",
-        "url": "https://www.alura.com.br/cursos-online-programacao"
-      }
+      "title": "Livros",
+      "color": "#00C86F"
     },
     {
       "id": 3,
-      "title": "Data Science e inteligência artificial",
-      "color": "#9cd33b",
-      "extra_link": {
-        "text": "Cursos de Data Science na Alura",
-        "url": "https://www.alura.com.br/formacao-data-science"
-      }
+      "title": "Podcasts",
+      "color": "#9cd33b"
+    },
+    {
+      "id": 4,
+      "title": "Filmes",
+      "color": "orange"
     }
   ],
   "videos": [
     {
       "id": 1,
       "categoryId": 1,
-      "title": "O que faz uma desenvolvedora front-end? #HipstersPontoTube",
-      "url": "https://www.youtube.com/watch?v=ZY3-MFxVdEw"
+      "title": "Como entender a Imagem de um buraco negro",
+      "url": "https://www.youtube.com/watch?v=zUyH3XhpLTo"
     },
     {
       "id": 2,
       "categoryId": 1,
-      "title": "SEO com React",
-      "url": "https://www.youtube.com/watch?v=c8mVlakBESE"
+      "title": "Niilismo otimista",
+      "url": "https://www.youtube.com/watch?v=MBRqu0YOH14"
     },
     {
       "id": 3,
       "categoryId": 1,
-      "title": "Componentização com VanillaJS #AluraMais",
-      "url": "https://www.youtube.com/watch?v=LatCKpcOMak"
+      "title": "Qual é a coisa mais brilhante no Universo?",
+      "url": "https://www.youtube.com/watch?v=FJB7gbjiJKw"
     },
     {
       "id": 4,
       "categoryId": 1,
-      "title": "Pare de chutar e aprenda a display: inline #01",
-      "url": "https://www.youtube.com/watch?v=5PS6ku8NzIE"
+      "title": "O segredo da meritocracia",
+      "url": "https://www.youtube.com/watch?v=YINTTVjBrY4"
     },
     {
       "id": 5,
       "categoryId": 1,
-      "title": "Template String: Interpolando strings com JavaScript #AluraMais",
-      "url": "https://www.youtube.com/watch?v=ORI_HTXaIw0"
+      "title": "Este vídeo vai salvar a sua vida! (ASSUSTADOR)",
+      "url": "https://www.youtube.com/watch?v=CQTgeLATdEg&t=403s"
     },
     {
       "id": 6,
       "categoryId": 1,
-      "title": "Qual é a melhor linguagem de programação? #HipstersPontoTube",
-      "url": "https://www.youtube.com/watch?v=Uh-GNH-t89w"
+      "title": "Porque as plantas não são pretas?",
+      "url": "https://www.youtube.com/watch?v=3BRP4wcSCM0"
     },
     {
       "id": 7,
       "categoryId": 1,
-      "title": "Novidades do Angular v9",
-      "url": "https://www.youtube.com/watch?v=34uHo7hFmG0"
+      "title": "Colocamos uma psicóloga e um coach para conversar",
+      "url": "https://www.youtube.com/watch?v=XE67NDX9Ci8"
     },
     {
       "id": 8,
       "categoryId": 1,
-      "title": "Base para aprender os frameworks",
-      "url": "https://www.youtube.com/watch?v=QzDjdlF1BQI"
+      "title": "Mas é só uma Teoria!!!!",
+      "url": "https://www.youtube.com/watch?v=gYD8bP9cGmM"
     },
     {
       "id": 9,
       "categoryId": 2,
-      "title": "PERCURSO em NÍVEL em ÁRVORE BINÁRIA | Estruturas de Dados #14",
-      "url": "https://www.youtube.com/watch?v=UOK7nS2E9xM"
+      "title": "O despertar dos deuses",
+      "url": "https://www.skoob.com.br/livro/resenhas/4400/edicao:74697",
+      "img": "https://skoob.s3.amazonaws.com/livros/4400/DESPERTAR_DOS_DEUSES_1352899330B.jpg"
     },
     {
       "id": 10,
       "categoryId": 2,
-      "title": "Coders4Tips - S01E04: GitHub CLI - Uma Nova Experiência no Github!",
-      "url": "https://www.youtube.com/watch?v=6o6-bKOZOEY"
+      "title": "Eu robô",
+      "url": "https://www.youtube.com/watch?v=6o6-bKOZOEY",
+      "img": "https://skoob.s3.amazonaws.com/livros/241/EU_ROBO_1228412917B.jpg"
     },
     {
       "id": 11,
       "categoryId": 2,
-      "title": "Programei 4 robôs que criam vídeos para mim no YouTube",
-      "url": "https://www.youtube.com/watch?v=kjhu1LEmRpY"
+      "title": "O outro lado do céu",
+      "url": "https://www.skoob.com.br/o-outro-lado-do-ceu-24635ed26782.html",
+      "img": "https://skoob.s3.amazonaws.com/livros/24635/O_OUTRO_LADO_DO_CEU_1399488701B.jpg"
     },
     {
       "id": 12,
       "categoryId": 2,
-      "title": "API: Dicionário do Programador",
-      "url": "https://www.youtube.com/watch?v=vGuqKIRWosk"
+      "title": "O andar do bêbado",
+      "url": "https://www.skoob.com.br/o-andar-do-bebado-37134ed40631.html",
+      "img": "https://skoob.s3.amazonaws.com/livros/37134/O_ANDAR_DO_BEBADO_142236016637134SK1422360166B.jpg"
     },
     {
       "id": 13,
       "categoryId": 2,
-      "title": "Usando Git Direito",
-      "url": "https://www.youtube.com/watch?v=6OokP-NE49k"
+      "title": "O Universo Numa Casca de Noz",
+      "url": "https://www.skoob.com.br/livro/373ED496",
+      "img": "https://skoob.s3.amazonaws.com/livros/373/O_UNIVERSO_NUMA_CASCA_DE_NOZ_1349121745B.jpg"
     },
     {
       "id": 14,
-      "categoryId": 3,
-      "title": "Teste de Turing",
-      "url": "https://www.youtube.com/watch?v=BaPGU4JWa34"
+      "categoryId": 2,
+      "title": "O Guia do Mochileiro das Galáxias #1",
+      "url": "https://www.skoob.com.br/o-guia-do-mochileiro-das-galaxias-225ed320.html",
+      "img": "https://skoob.s3.amazonaws.com/livros/225/O_GUIA_DO_MOCHILEIRO_DAS_GALAXIAS_1236471188B.jpg"
     },
     {
       "id": 15,
-      "categoryId": 3,
-      "title": "O que é Data Science?",
-      "url": "https://www.youtube.com/watch?v=5b9Z8toVaAU&t=9s"
+      "categoryId": 2,
+      "title": "2001: Uma Odisseia no Espaço",
+      "url": "https://www.skoob.com.br/2001-uma-odisseia-no-espaco-4457ed5516.html",
+      "img": "https://skoob.s3.amazonaws.com/livros/4457/2001_UMA_ODISSEIA_NO_ESPACO_15252276204457SK1525227623B.jpg"
     },
     {
       "id": 16,
       "categoryId": 3,
-      "title": "Melhor forma de aprender Python",
-      "url": "https://www.youtube.com/watch?v=Gojqw9BQ5qY"
+      "title": "A tentativa de conquista de Marte",
+      "url": "https://www.deviante.com.br/podcasts/scicast-386/",
+      "img": "https://i0.wp.com/www.deviante.com.br/wp-content/uploads/2020/07/ScicastDestaque386.jpg?fit=1000%2C375"
     },
     {
       "id": 17,
       "categoryId": 3,
-      "title": "Como ingressar no mercado de Data Science?",
-      "url": "https://www.youtube.com/watch?v=gxyjGmOV540"
+      "title": "O que é o efeito cumbuca?",
+      "url": "https://www.b9.com.br/shows/naruhodo/naruhodo-233-o-que-e-o-efeito-cumbuca/",
+      "img": "https://assets.b9.com.br/wp-content/uploads/2020/05/naruhodo-capa-qudrado-233.png"
+    },
+    {
+      "id": 18,
+      "categoryId": 3,
+      "title": "A vítima tem sempre razão? Com Francisco Bosco",
+      "url": "https://filosofiapop.com.br/podcast/089-a-vitima-tem-sempre-razao-com-francisco-bosco/",
+      "img": "https://i2.wp.com/filosofiapop.com.br/wp-content/uploads/2020/05/089-francisco-bosco.jpg?resize=250%2C175&ssl=1"
+    },
+    {
+      "id": 19,
+      "categoryId": 3,
+      "title": "O evangelion do novo Gênesis",
+      "url": "http://www.mundofreak.com.br/2020/04/17/o-evangelion-do-novo-genesis-mfc-294/",
+      "img": "http://www.mundofreak.com.br/wp-content/uploads/2020/04/294-Evangelion-730x730.png"
+    },
+    {
+      "id": 20,
+      "categoryId": 4,
+      "title": "Interstellar",
+      "url": "https://www.youtube.com/watch?v=frD_IiY_A3E"
+    },
+    {
+      "id": 21,
+      "categoryId": 4,
+      "title": "Arrival",
+      "url": "https://www.youtube.com/watch?v=rNciXGzYZms"
+    },
+    {
+      "id": 22,
+      "categoryId": 4,
+      "title": "The Theory of Everything",
+      "url": "https://www.youtube.com/watch?v=Salz7uGp72c"
+    },
+    {
+      "id": 23,
+      "categoryId": 4,
+      "title": "2001: A Space Odyssey",
+      "url": "https://www.youtube.com/watch?v=7E9CD3Hucws"
+    },
+    {
+      "id": 24,
+      "categoryId": 4,
+      "title": "The Matrix",
+      "url": "https://www.youtube.com/watch?v=2KnZac176Hs"
     }
   ]
 }

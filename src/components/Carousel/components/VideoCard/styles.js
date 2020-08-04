@@ -1,5 +1,6 @@
 import styled from 'styled-components';
 
+// eslint-disable-next-line import/prefer-default-export
 export const VideoCardContainer = styled.a`
   border: 2px solid;
   border-radius: 4px;
@@ -13,6 +14,7 @@ export const VideoCardContainer = styled.a`
   background-image: ${({ url }) => `url(${url})`};
   background-size: cover;
   background-position: center;
+  background-repeat: no-repeat;
   border-radius: 10px;
   position: relative;
   display: flex;
@@ -21,10 +23,54 @@ export const VideoCardContainer = styled.a`
 
   transition: opacity .3s;
   &:hover,
-  &:focus {
-    opacity: .5;
+  &:focus{
+    div{
+      background-color: rgba(0,0,0,0.5);
+      background-size: cover; 
+      width: 100%;
+      height: 100%;
+      opacity: unset;
+      position: absolute;
+      bottom: 0;
+      left:0;
+      color: white;
+      display: flex;
+      align-items: flex-end;
+    }
+
+    h3{
+      font-size: 18px;
+      margin: 10px;
+      display: inline;
+    } 
   }
-  
+
+  h3{
+    display: none;
+  }
+
+
+  @media (max-width: 800px) {
+    div{
+      background-color: rgba(0,0,0,0.5);
+      background-size: cover; 
+      width: 100%;
+      height: 100%;
+      opacity: unset;
+      position: absolute;
+      bottom: 0;
+      left:0;
+      color: white;
+      display: flex;
+      align-items: flex-end;
+    }
+    h3{
+      font-size: 18px;
+      margin: 10px;
+      display: inline;
+    } 
+  }
+
   &:not(:first-child) {
     margin-left: 20px;
   }

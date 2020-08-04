@@ -10,13 +10,13 @@ const Container = styled.ul`
   .slick-next {
     z-index: 50;
     top: 0;
-    bottom: 0;
+    bottom: 20px;
     margin: auto;
     width: 30px;
     height: 30px;
     transform: initial;
     &:before {
-      font-size: 30px;
+      font-size: 50px;
     }
   }
   
@@ -24,8 +24,15 @@ const Container = styled.ul`
     left: 0;
   }
   .slick-next {
-    right: 16px;
+    right: 26px;
   }
+  
+  .slick-dots>li>button{
+    &::before{
+      color: white;
+    }
+  }
+
 `;
 
 export const SliderItem = styled.li`
@@ -38,16 +45,16 @@ export const SliderItem = styled.li`
   }
 `;
 
-
 const Slider = ({ children }) => (
   <Container>
     <SlickSlider {...{
-      dots: false,
-      infinite: false,
+      dots: true,
+      infinite: true,
       speed: 300,
       centerMode: false,
       variableWidth: true,
       adaptiveHeight: true,
+      accessibility: true,
     }}
     >
       {children}
@@ -55,4 +62,4 @@ const Slider = ({ children }) => (
   </Container>
 );
 
-export default Slider; 
+export default Slider;
