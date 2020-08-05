@@ -6,10 +6,12 @@ import FormField from '../../../components/FormField';
 import Button from '../../../components/Button';
 import useForm from '../../../hooks/useForm';
 import resources from '../../../repositories/categories';
+import Loading from '../../../components/Loading';
+import CategoryTable from './components/CategoryTable';
 
 function CategoryRegistration() {
   const defaultValues = {
-    name: '',
+    title: '',
     description: '',
     color: '',
   };
@@ -29,7 +31,7 @@ function CategoryRegistration() {
         <h1>
           Cadastro de Categoria:
           {' '}
-          {values.name}
+          {values.title}
         </h1>
 
         <form
@@ -43,10 +45,10 @@ function CategoryRegistration() {
 
           <FormField
             label="Título da Categoria"
-            value={values.name}
+            value={values.title}
             onChange={handleChange}
             type="text"
-            name="name"
+            name="title"
           />
 
           <FormField
@@ -71,19 +73,9 @@ function CategoryRegistration() {
 
         </form>
 
-        {categories.length === 0 && (
-          <div>
-            Loading...
-          </div>
-        )}
-
-        <ul>
-          {categories.map((category) => (
-            <li key={`${category.title}`}>
-              {category.title}
-            </li>
-          ))}
-        </ul>
+        {categories.length === 0
+          ? (<Loading />)
+          : (<CategoryTable category={categories} />)}
 
         <Link to="/">
           Ir para home

@@ -3,22 +3,26 @@
     {
       "id": 1,
       "title": "YouTube",
-      "color": "#6BD1FF"
+      "color": "#6BD1FF",
+      "description": "Conteúdo do YouTube sobre divulgação científica"
     },
     {
       "id": 2,
       "title": "Livros",
-      "color": "#00C86F"
+      "color": "#00C86F",
+      "description": "Livros de ficção científica e divulgação científica"
     },
     {
       "id": 3,
       "title": "Podcasts",
-      "color": "#9cd33b"
+      "color": "#9cd33b",
+      "description": "Podcasts sobre divulgação científica e divulgação científica"
     },
     {
       "id": 4,
       "title": "Filmes",
-      "color": "orange"
+      "color": "orange",
+      "description": "Filmes de ficção científica"
     }
   ],
   "videos": [

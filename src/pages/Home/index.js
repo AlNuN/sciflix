@@ -3,6 +3,7 @@ import BannerMain from '../../components/BannerMain';
 import Carousel from '../../components/Carousel';
 import TemplatePage from '../../components/TemplatePage';
 import categoryRepository from '../../repositories/categories';
+import Loading from '../../components/Loading';
 
 function Home() {
   const [initialData, setInitialData] = useState([]);
@@ -20,7 +21,9 @@ function Home() {
   return (
     <TemplatePage>
 
-      {initialData.length === 0 && (<div>Loading...</div>)}
+      {initialData.length === 0 && (
+        <Loading height="50vh" />
+      )}
 
       {initialData.map((category, index) => {
         if (index === 0) {

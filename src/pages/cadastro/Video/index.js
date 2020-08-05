@@ -12,9 +12,9 @@ function CadastroVideo() {
   const history = useHistory();
   const [categories, setCategories] = useState([]);
   const { handleChange, values } = useForm({
-    title: 'Video padrão',
-    url: 'https://www.youtube.com/watch?v=9pBdSP9gzP0',
-    category: 'Front End',
+    title: '',
+    url: '',
+    category: '',
   });
 
   useEffect(() => {
@@ -25,8 +25,6 @@ function CadastroVideo() {
       });
   }, []);
 
-  // console.log(categories);
-
   return (
     <TemplatePage>
       <CategoriaWrapper>
@@ -35,9 +33,7 @@ function CadastroVideo() {
         <form onSubmit={(event) => {
           event.preventDefault();
 
-          const chosenCategory = categories.find((category) => {
-            return category.title === values.category;
-          });
+          const chosenCategory = categories.find((category) => category.title === values.category);
 
           videosRepository.create({
             title: values.title,
