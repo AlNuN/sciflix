@@ -1,22 +1,26 @@
 import React, { useState, useEffect } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useHistory } from 'react-router-dom';
+import { Formik } from 'formik';
+import styled from 'styled-components';
 import TemplatePage from '../../../components/TemplatePage';
 import CategoryWrapper from '../style';
 import FormField from '../../../components/FormField';
 import Button from '../../../components/Button';
-import useForm from '../../../hooks/useForm';
 import resources from '../../../repositories/categories';
 import Loading from '../../../components/Loading';
 import CategoryTable from './components/CategoryTable';
 
+const Small = styled.small`
+  color: red;
+`;
+
 function CategoryRegistration() {
+  const history = useHistory();
   const defaultValues = {
     title: '',
     description: '',
     color: '',
   };
-
-  const { handleChange, values, clearForm } = useForm(defaultValues);
 
   const [categories, setCategories] = useState([]);
 
@@ -25,53 +29,96 @@ function CategoryRegistration() {
       .then((json) => setCategories([...json]));
   }, []);
 
+  function validation(inputs) {
+    const errors = {};
+    if (!inputs.title) {
+      errors.title = 'Campo obrigatório';
+    }
+    if (!inputs.description) {
+      errors.description = 'Campo obrigatório';
+    }
+    if (!inputs.color) {
+      errors.description = 'Campo obrigatório';
+    }
+
+    return errors;
+  }
+
+  function checkErrors(inputs, { setSubmitting }) {
+    setTimeout(() => {
+      resources.create({
+        title: inputs.title,
+        color: inputs.color,
+        description: inputs.description,
+      })
+        .then(() => {
+          console.log('Cadastro realizado com sucesso');
+          history.push('/');
+        });
+
+      setSubmitting(false);
+    }, 400);
+  }
+
   return (
     <TemplatePage>
       <CategoryWrapper>
         <h1>
           Cadastro de Categoria:
-          {' '}
-          {values.title}
         </h1>
 
-        <form
-          onSubmit={function commit(i) {
-            i.preventDefault();
-            setCategories([...categories, values]);
-
-            clearForm();
-          }}
+        <Formik
+          initialValues={defaultValues}
+          validate={validation}
+          onSubmit={checkErrors}
         >
+          {({
+            values,
+            errors,
+            touched,
+            handleChange,
+            handleBlur,
+            handleSubmit,
+          }) => (
+            <form onSubmit={handleSubmit}>
 
-          <FormField
-            label="Título da Categoria"
-            value={values.title}
-            onChange={handleChange}
-            type="text"
-            name="title"
-          />
+              <Small>{errors.title && touched.title && errors.title}</Small>
+              <FormField
+                label="Título da Categoria"
+                value={values.title}
+                onChange={handleChange}
+                onBlur={handleBlur}
+                type="text"
+                name="title"
+              />
 
-          <FormField
-            label="Descrição"
-            value={values.description}
-            onChange={handleChange}
-            type="textarea"
-            name="description"
-          />
+              <Small>{errors.description && touched.description && errors.description}</Small>
+              <FormField
+                label="Descrição"
+                value={values.description}
+                onChange={handleChange}
+                onBlur={handleBlur}
+                type="textarea"
+                name="description"
+              />
 
-          <FormField
-            label="Cor"
-            value={values.color}
-            onChange={handleChange}
-            type="color"
-            name="color"
-          />
+              <Small>{errors.color && touched.color && errors.color}</Small>
+              <FormField
+                label="Cor"
+                value={values.color}
+                onChange={handleChange}
+                onBlur={handleBlur}
+                type="color"
+                name="color"
+              />
 
-          <Button noMedia>
-            Cadastrar
-          </Button>
+              <Button noMedia>
+                Cadastrar
+              </Button>
 
-        </form>
+            </form>
+          )}
+        </Formik>
 
         {categories.length === 0
           ? (<Loading />)
