@@ -11,7 +11,7 @@ function Menu() {
         <LogoImage src={Logo} alt="Logo da Sciflix" />
       </Link>
 
-      <Button as={Link} to="/cadastro/video" primary="true">
+      <Button as={Link} to="/cadastro/video" color="white">
         Novo vídeo
       </Button>
     </MenuWrapper>

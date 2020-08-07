@@ -64,7 +64,7 @@ function CategoryRegistration() {
     <TemplatePage>
       <CategoryWrapper>
         <h1>
-          Cadastro de Categoria:
+          Nova Categoria
         </h1>
 
         <Formik
@@ -79,6 +79,7 @@ function CategoryRegistration() {
             handleChange,
             handleBlur,
             handleSubmit,
+            resetForm,
           }) => (
             <form onSubmit={handleSubmit}>
 
@@ -112,8 +113,17 @@ function CategoryRegistration() {
                 name="color"
               />
 
-              <Button noMedia>
-                Cadastrar
+              <Button noMedia color="white" bg="primary">
+                Salvar
+              </Button>
+              <Button
+                noMedia
+                color="white"
+                bg="backEnd"
+                className="clear"
+                onMouseUp={resetForm}
+              >
+                Limpar
               </Button>
 
             </form>
@@ -124,7 +134,7 @@ function CategoryRegistration() {
           ? (<Loading />)
           : (<CategoryTable category={categories} />)}
 
-        <Link to="/">
+        <Link className="Link" to="/">
           Ir para home
         </Link>
 

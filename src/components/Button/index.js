@@ -1,8 +1,9 @@
 import styled from 'styled-components';
 
 const Button = styled.button`
-  color: ${(props) => (props.primary === 'true' ? 'var(--white)' : 'var(--black)')};
-  border: 1px solid var(--white);
+  color: ${(props) => (`var(--${props.color})`)};
+  background-color: ${(props) => (`var(--${props.bg})`)};
+  border: 1px solid ${(props) => `var(--${props.bg !== undefined ? props.bg : 'white'})`};
   box-sizing: border-box;
   cursor: pointer;
   padding: 16px 24px;

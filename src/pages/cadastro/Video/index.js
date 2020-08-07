@@ -87,7 +87,7 @@ function CadastroVideo() {
   return (
     <TemplatePage>
       <CategoriaWrapper>
-        <h1>Cadastro de Recurso</h1>
+        <h1>Novo Item</h1>
 
         <Formik
           initialValues={defaultValues}
@@ -101,6 +101,7 @@ function CadastroVideo() {
             handleChange,
             handleBlur,
             handleSubmit,
+            resetForm,
           }) => (
 
             <form onSubmit={handleSubmit}>
@@ -147,15 +148,24 @@ function CadastroVideo() {
                 onBlur={handleBlur}
               />
 
-              <Button type="submit">
-                Cadastrar
+              <Button noMedia type="submit" color="white" bg="primary">
+                Salvar
+              </Button>
+              <Button
+                noMedia
+                color="white"
+                bg="backEnd"
+                className="clear"
+                onMouseUp={resetForm}
+              >
+                Limpar
               </Button>
             </form>
           )}
 
         </Formik>
 
-        <Link to="/cadastro/categoria">
+        <Link className="Link" to="/cadastro/categoria">
           Cadastrar Categoria
         </Link>
       </CategoriaWrapper>
