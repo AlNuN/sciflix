@@ -8,22 +8,7 @@ import FormField from '../../../components/FormField';
 import Button from '../../../components/Button';
 import categoriesRepository from '../../../repositories/categories';
 import videosRepository from '../../../repositories/videos';
-
-function getYouTubeId(youtubeURL) {
-  return youtubeURL
-    .replace(
-      /^.*((youtu.be\/)|(v\/)|(\/u\/\w\/)|(embed\/)|(watch\?))\??v?=?([^#&?]*).*/,
-      '$7',
-    );
-}
-
-function getYouTubeThumb(videoURL) {
-  return `https://img.youtube.com/vi/${getYouTubeId(videoURL)}/hqdefault.jpg`;
-}
-
-function hasYouTube(string) {
-  return /youtube/i.test(string);
-}
+import { getYouTubeId, getYouTubeThumb, hasYouTube } from '../../../hooks/youTubeTools';
 
 const Small = styled.small`
   color: red;
@@ -73,7 +58,7 @@ function CadastroVideo() {
         title: inputs.title,
         url: inputs.url,
         categoryId: chosenCategory.id,
-        img: hasYouTube(inputs.url) ? getYouTubeThumb(inputs.url) : inputs.img,
+        img: hasYouTube(inputs.url) ? getYouTubeThumb(getYouTubeId(inputs.url)) : inputs.img,
       })
         .then(() => {
           console.log('Cadastro realizado com sucesso');

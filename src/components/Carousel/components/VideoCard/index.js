@@ -1,17 +1,11 @@
 import React from 'react';
 import { VideoCardContainer } from './styles';
+import { getYouTubeId, getYouTubeThumb } from '../../../../hooks/youTubeTools';
 
-function getYouTubeId(youtubeURL) {
-  return youtubeURL
-    .replace(
-      /^.*((youtu.be\/)|(v\/)|(\/u\/\w\/)|(embed\/)|(watch\?))\??v?=?([^#&?]*).*/,
-      '$7',
-    );
-}
-
-
-function VideoCard({ videoTitle, videoURL, categoryColor, img }) {
-  const image = img !== undefined ? img : `https://img.youtube.com/vi/${getYouTubeId(videoURL)}/hqdefault.jpg`;
+function VideoCard({
+  videoTitle, videoURL, categoryColor, img,
+}) {
+  const image = img !== undefined ? img : getYouTubeThumb(getYouTubeId(videoURL));
   return (
     <VideoCardContainer
       url={image}
@@ -20,7 +14,7 @@ function VideoCard({ videoTitle, videoURL, categoryColor, img }) {
       style={{ borderColor: categoryColor || 'red' }}
       title={videoTitle}
     >
-      <div> 
+      <div>
         <h3>
           {videoTitle}
         </h3>
