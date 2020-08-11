@@ -132,7 +132,7 @@ function CategoryRegistration() {
 
         {categories.length === 0
           ? (<Loading />)
-          : (<CategoryTable category={categories} />)}
+          : (<CategoryTable serverCategories={categories} />)}
 
         <Link className="Link" to="/">
           Ir para home

@@ -2,9 +2,9 @@
   "categories": [
     {
       "id": 1,
-      "title": "Videos",
+      "title": "Vídeos",
       "color": "#6BD1FF",
-      "description": "Conteúdo do YouTube sobre divulgação científica"
+      "description": "Vídeos do Youtube sobre ficção científica e divulgação científica"
     },
     {
       "id": 2,

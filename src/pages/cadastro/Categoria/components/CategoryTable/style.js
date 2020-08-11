@@ -1,5 +1,22 @@
 import styled from 'styled-components';
 
+const Input = styled.input`
+  border: none;
+  background-color: inherit;
+  color: inherit;
+  width: 100%;
+`;
+
+const TableButton = styled.button`
+  border: none;
+  background-color: inherit;
+  color: inherit;
+
+  &:hover{
+    font-weight: 900;
+  }
+`;
+
 const Table = styled.table`
   border: 2px solid var(--primary);
   line-height: 24px;
@@ -42,4 +59,8 @@ const Table = styled.table`
 
 `;
 
-export default Table;
+export {
+  Table,
+  TableButton,
+  Input,
+};

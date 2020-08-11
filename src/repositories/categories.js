@@ -38,8 +38,27 @@ function create(categoryObject) {
     });
 }
 
+function modify(categoryObject) {
+  return fetch(`${config.URL_BACKEND}/categories/${categoryObject.id}`, {
+    method: 'PUT',
+    headers: {
+      'Content-Type': 'application/json',
+    },
+    body: JSON.stringify(categoryObject),
+  })
+    .then(async (response) => {
+      if (response.ok) {
+        const json = await response.json();
+        return json;
+      }
+
+      throw new Error('Não foi possível cadastrar os dados do servidor :(');
+    });
+}
+
 export default {
   getAll,
   getAllWithVideos,
   create,
+  modify,
 };
