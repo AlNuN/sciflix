@@ -44,8 +44,8 @@ function CategoryTable({ serverCategories }) {
                 key={`description_${category.id}`}
               />
             </td>
-            <td className="button" key={`edit_${category.id}`}><Button onMouseUp={() => edit(category)}>Editar</Button></td>
-            <td className="button" key={`remove_${category.id}`}><Button>Remover</Button></td>
+            <td className="button"><Button onMouseUp={() => edit(category)}>Editar</Button></td>
+            <td className="button"><Button>Remover</Button></td>
           </tr>
         ))}
       </tbody>
